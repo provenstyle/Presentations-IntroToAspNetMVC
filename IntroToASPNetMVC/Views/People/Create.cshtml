@@ -1,7 +1,6 @@
-﻿@model IntroToASPNetMVC.Controllers.Person
+﻿@model Domain.People.Create.CreatePerson
 
-
-@using (Html.BeginForm("Create","Foo")) 
+@using (Html.BeginForm("Create")) 
 {
     @Html.AntiForgeryToken()
     

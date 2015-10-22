@@ -11,6 +11,8 @@ using Castle.MicroKernel;
 using Castle.MicroKernel.Lifestyle;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
+using Domain;
+using Domain.People;
 using Improving.MediatR;
 
 namespace IntroToASPNetMVC
@@ -30,7 +32,10 @@ namespace IntroToASPNetMVC
                     .WithServiceSelf()
                     .LifestyleScoped(typeof(WebRequestScopeAccessor))
             );
-            container.Install(new MediatRInstaller(Classes.FromThisAssembly()));
+            container.Install(new MediatRInstaller(
+                Classes.FromThisAssembly(),
+                Classes.FromAssemblyContaining<Person>()),
+                new DomainInstaller());
 
             ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory(container.Kernel));
             GlobalConfiguration.Configuration.Services.Replace(typeof(IHttpControllerActivator), new WindsorHttpControllerActivator(container.Kernel));
