@@ -41,9 +41,9 @@ namespace Domain.Repository
             return localPerson;
         }
 
-        public async Task DeleteAsync(Person person)
+        public async Task DeleteAsync(int Id)
         {
-            _people.Remove(await FindAsync(person.Id));
+            _people.Remove(await FindAsync(Id));
         }
     }
 }

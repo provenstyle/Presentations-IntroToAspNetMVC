@@ -284,8 +284,9 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\People\Create.cshtml" />
-    <Content Include="Views\People\Read.cshtml" />
+    <Content Include="Views\People\Details.cshtml" />
     <Content Include="Views\People\Index.cshtml" />
+    <Content Include="Views\People\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

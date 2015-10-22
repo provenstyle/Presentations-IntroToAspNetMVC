@@ -88,6 +88,7 @@
     <Compile Include="People\Create\CreatePerson.cs" />
     <Compile Include="People\Create\CreatePersonHandler.cs" />
     <Compile Include="People\Create\CreatePersonResponse.cs" />
+    <Compile Include="People\Delete\DeletePerson.cs" />
     <Compile Include="People\Get\GetPeople.cs" />
     <Compile Include="People\Get\GetPerson.cs" />
     <Compile Include="People\Get\GetPeopleHandler.cs" />

@@ -10,6 +10,6 @@ namespace Domain.Repository
         Task<Person> FindAsync(int Id);
         Task<Person> CreateAsync(Person person);
         Task<Person> UpdateAsync(Person person);
-        Task DeleteAsync(Person person);
+        Task DeleteAsync(int Id);
     }
 }

@@ -1,7 +1,14 @@
 ﻿@model Domain.People.Person
 
+<p>
+    @Html.ActionLink("Create New", "Create", new { }, new { @class = "btn btn-primary" })
+</p>
+
+
 <h2>Person</h2>
 
 <h3>@Model.First @Model.Last</h3>
+
+@Html.ActionLink("Back to List", "Index")
 
 
