@@ -7,6 +7,8 @@ using System.Web.Http.Controllers;
 using System.Web.Http.Dispatcher;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Castle.Core.Logging;
+using Castle.Facilities.Logging;
 using Castle.MicroKernel;
 using Castle.MicroKernel.Lifestyle;
 using Castle.MicroKernel.Registration;
@@ -19,9 +21,10 @@ namespace IntroToASPNetMVC
 {
     public class CastleWindsorConfig
     {
-        public static void RegisterCastleWindsor()
+        public static ILogger RegisterCastleWindsor()
         {
             var container = new WindsorContainer();
+            container.AddFacility<LoggingFacility>(f => f.UseLog4Net());
             container.Register(
                 Classes.FromThisAssembly()
                     .BasedOn<IHttpController>()
@@ -39,6 +42,8 @@ namespace IntroToASPNetMVC
 
             ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory(container.Kernel));
             GlobalConfiguration.Configuration.Services.Replace(typeof(IHttpControllerActivator), new WindsorHttpControllerActivator(container.Kernel));
+
+            return container.Resolve<ILogger>();
         }
     }
 
