@@ -30,10 +30,10 @@ namespace IntroToASPNetMVC.Controllers
         public async Task<ActionResult> Create(CreatePerson createPerson)
         {
             var person = await _mediator.SendAsync(createPerson);
-            return RedirectToAction("Read", new {Id = person.Id});
+            return RedirectToAction("Details", new {Id = person.Id});
         }
 
-        public async Task<ActionResult> Read(GetPerson getPerson)
+        public async Task<ActionResult> Details(GetPerson getPerson)
         {
             var person = await _mediator.SendAsync(getPerson);
             return View(person);
