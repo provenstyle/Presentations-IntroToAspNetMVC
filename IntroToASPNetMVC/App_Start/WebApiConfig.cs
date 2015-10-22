@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace IntroToASPNetMVC
 {
@@ -10,6 +12,13 @@ namespace IntroToASPNetMVC
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
+            //Use camel casing
+            GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings =
+                new JsonSerializerSettings
+                {
+                    NullValueHandling = NullValueHandling.Ignore,
+                    ContractResolver = new CamelCasePropertyNamesContractResolver()
+                };
 
             // Web API routes
             config.MapHttpAttributeRoutes();
