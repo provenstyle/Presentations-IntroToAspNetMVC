@@ -15,9 +15,10 @@ namespace IntroToASPNetMVC.Controllers
             _mediator = mediator;
         }
 
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
-            return View();
+            var people = await _mediator.SendAsync(new GetPeople());
+            return View(people);
         }
 
         public ActionResult Create()

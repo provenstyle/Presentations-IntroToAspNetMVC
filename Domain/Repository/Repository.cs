@@ -27,7 +27,7 @@ namespace Domain.Repository
             {
                 First = person.First,
                 Last = person.Last,
-                Id = _people.Count()
+                Id = _people.Count() + 1
             };
             _people.Add(localPerson);
             return localPerson;

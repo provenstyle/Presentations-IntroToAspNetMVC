@@ -86,11 +86,17 @@
   <ItemGroup>
     <Compile Include="DomainInstaller.cs" />
     <Compile Include="People\Create\CreatePerson.cs" />
+    <Compile Include="People\Create\CreatePersonHandler.cs" />
+    <Compile Include="People\Create\CreatePersonResponse.cs" />
+    <Compile Include="People\Get\GetPeople.cs" />
     <Compile Include="People\Get\GetPerson.cs" />
+    <Compile Include="People\Get\GetPeopleHandler.cs" />
+    <Compile Include="People\Get\GetPersonHandler.cs" />
     <Compile Include="People\Person.cs" />
     <Compile Include="People\Create\CreatePersonValidation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Repository\Repository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

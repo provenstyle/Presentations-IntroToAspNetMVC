@@ -1,4 +1,4 @@
-﻿using System.Threading.Tasks;
+﻿using System.Text;
 using MediatR;
 
 namespace Domain.People.Get
@@ -6,17 +6,14 @@ namespace Domain.People.Get
     public class GetPerson : IAsyncRequest<Person>
     {
         public int Id { get; set; }
-    }
 
-    public class GetPersonHandler : IAsyncRequestHandler<GetPerson, Person>
-    {
-        public Task<Person> Handle(GetPerson message)
+        public override string ToString()
         {
-            return Task.FromResult(new Person
-            {
-                First = "Impelement",
-                Last = "Me"
-            });
+            var builder = new StringBuilder();
+            builder.AppendLine().Append(nameof(GetPerson)).AppendLine("{")
+                .AppendFormat("    {0}: {1}", nameof(Id), Id).AppendLine()
+                .AppendLine("}");
+            return builder.ToString();
         }
     }
 }
