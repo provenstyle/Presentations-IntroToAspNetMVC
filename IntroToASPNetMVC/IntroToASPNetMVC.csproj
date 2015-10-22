@@ -215,6 +215,11 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\PanelDController.cs" />
+    <Compile Include="Controllers\PanelCController.cs" />
+    <Compile Include="Controllers\PanelBController.cs" />
+    <Compile Include="Controllers\PanelAController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\PeopleApiController.cs" />
     <Compile Include="Controllers\PeopleController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -290,6 +295,11 @@
     <Content Include="Views\People\Index.cshtml" />
     <Content Include="Views\People\Delete.cshtml" />
     <Content Include="Views\People\Edit.cshtml" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\PanelA\Index.cshtml" />
+    <Content Include="Views\PanelB\Index.cshtml" />
+    <Content Include="Views\PanelC\Index.cshtml" />
+    <Content Include="Views\PanelD\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

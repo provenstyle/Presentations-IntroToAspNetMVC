@@ -22,3 +22,7 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.dashboard .panel {
+    min-height: 400px;
+}

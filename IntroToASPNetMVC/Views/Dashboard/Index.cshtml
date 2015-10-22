@@ -1,0 +1,26 @@
+﻿<div class="dashboard">
+    <div class="row">
+        <div class="col-sm-6">
+            @{
+                Html.RenderAction("Index", "PanelA");
+            }
+        </div>
+        <div class="col-sm-6">
+            @{
+                Html.RenderAction("Index", "PanelB");
+            }
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            @{
+                Html.RenderAction("Index", "PanelC");
+            }
+        </div>
+        <div class="col-sm-6">
+            @{
+                Html.RenderAction("Index", "PanelD");
+            }
+        </div>
+    </div>
+</div>
